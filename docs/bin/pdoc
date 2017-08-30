@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var program = require('commander'),
+  exec = require('child_process').exec,
+  path = require('path'),
+  fs = require('fs');
+program.version(1);
+var main = require('../index.js');
+var colors = require('colors');
+
+// parse argv
+program.parse(process.argv);
+
+var args = program.args;
+
+switch (args[0]) {
+  case 'rebuild':
+    main.rebuild();
+    console.log('\n重新编译完成!'.rainbow);
+    break;
+  case 'build':
+    main.build(args[1]);
+    break;
+  case 'watch':
+    console.log('文档系统监听中……'.cyan, 'Ctrl+c 退出监听'.red);
+    main.watch();
+    break;
+}

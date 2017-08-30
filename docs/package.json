@@ -1,0 +1,55 @@
+{
+  "name": "pp-doc",
+  "version": "1.0.0",
+  "description": "doc build tool",
+  "main": "doc.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "ejs": "^2.4.1",
+    "highlight.js": "^9.2.0",
+    "watch": "^0.17.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "ppdoc"
+  ],
+  "bin": {
+    "pdoc": "bin/pdoc"
+  },
+  "author": {
+    "name": "junqing ren"
+  },
+  "license": "ISC",
+  "_id": "pp-doc@1.0.0",
+  "_shasum": "8cb94b44f051c3874a8b14b5e6894f6b7a161985",
+  "_from": "pp-doc@*",
+  "_npmVersion": "3.6.0",
+  "_nodeVersion": "5.7.1",
+  "_npmUser": {
+    "name": "junqingren",
+    "email": "602575696@qq.com"
+  },
+  "dist": {
+    "shasum": "8cb94b44f051c3874a8b14b5e6894f6b7a161985",
+    "size": 80522,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/pp-doc/download/pp-doc-1.0.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "junqingren",
+      "email": "602575696@qq.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/pp-doc-1.0.0.tgz_1461675131186_0.8468342844862491"
+  },
+  "publish_time": 1461675131695,
+  "_cnpm_publish_time": 1461675131695,
+  "_resolved": "https://registry.npm.taobao.org/pp-doc/download/pp-doc-1.0.0.tgz"
+}

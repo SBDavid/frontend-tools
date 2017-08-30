@@ -1,0 +1,23 @@
+.cascading, .cascading-item {
+	position: relative;
+}
+.cascading-item {
+	cursor: pointer;
+}
+.cascading .glyphicon-triangle-right {
+	float: right;
+}
+.cascading-menu {
+	top: 0;
+	left: 100%;
+}
+.cascading>.cascading-menu {
+	left: 0;
+	top: 100%;
+}
+.cascading-item.open {
+	background-color: #066ec7 !important;
+}
+.cascading-item.open>.casading-menu {
+	display: block;
+}

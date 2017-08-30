@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= pageTitle %></title>
+<meta charset=utf-8>
+<meta name=description content="">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="http://static.frontdoc.pptv.com/styles/monokai_sublime.css">
+<link rel="stylesheet" href="http://static.frontdoc.pptv.com/bootstrap-cascading.css">
+
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script src="http://static.frontdoc.pptv.com/bootstrap-cascading.js"></script>
+<script src="http://static.frontdoc.pptv.com/highlight.min.js"></script>
+<style>
+	.navbar.header-nav {
+		margin-bottom: 0;
+		border-radius: 0;
+	}
+	.container-fluid {
+		width: 980px;
+		margin: 0 auto;
+	}
+	.brand {
+		background: #6f5499;
+		height: 200px;
+		color: #fff;
+		font-size: 50px;
+	}
+	.brand .inner {
+		width: 980px;
+		margin: 0 auto;
+	}
+	.main {
+		width: 980px;
+		margin: 0 auto;
+	}
+	.main>.left {
+		width: 800px;
+		float: left;
+	}
+	.main>.right {
+		width: 170px;
+		float: right;
+		padding-top: 30px;
+	}
+	.affix {
+		top: 30px;
+	}
+</style>
+</head>
+<body>
+<%
+	var createTree = function(curNavTree) {
+%>
+<ul class="dropdown-menu cascading-menu">
+<%
+	for (var key in curNavTree) {
+		if (typeof curNavTree[key] == 'object') {
+%>
+		<li class="cascading-item">
+			<a href="javascript:void(0);"><%= key %>
+				<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+			</a>
+<%
+		createTree(curNavTree[key]);
+%>
+		</li>
+<%
+		} else {
+%>
+	<li>
+		<a href="<%= curNavTree[key] %>"><%= key %></a>
+	</li>
+<%
+		
+		}
+	}
+%>
+</ul>
+<%
+	}
+%>
+<nav class="navbar header-nav">
+	<div class="container-fluid">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+		<a class="navbar-brand" href="/">pptv前端文档</a>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+<%
+	for (var key in navTree) {
+%>
+<li class="cascading">
+<%
+	if (typeof navTree[key] == 'object') {
+%>
+	<a class="cascading-item" data-toggle="cascading">
+		<%= key %>
+		<span class="caret"></span>
+	</a>
+<%
+	createTree(navTree[key]);
+	} else {
+%>
+	<a class="" href="<%= navTree[key] %>">
+		<%= key %>
+	</a>
+</li>
+<%
+	}}
+%>
+		</ul>
+	</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+</nav>
+
+<div class="brand">
+	<div class="inner">文档</div>
+</div>
+<div class="main">
+	<div class="left">
+		<%- mainContent %>
+	</div>
+	<div class="right">
+		<nav data-spy="affix" data-offset-top="260" class="affix">
+			<ul class="nav bs-docs-sidenav">
+		<%
+			for (var i = 0; i < indexs.length; i++) {
+		%>
+				<li class="">
+					<a href="#<%= indexs[i].title %>"><%= indexs[i].title %></a>
+				</li>
+		<%
+			}
+		%>
+			</ul>
+		</nav>
+	</div>
+	<div style="clear: both;"></div>
+</div>
+
+</body>
+<script>
+	$(document).ready(function() {
+		$('pre code').each(function(i, block) {
+			hljs.highlightBlock(block);
+		});
+	});
+</script>
+</html>

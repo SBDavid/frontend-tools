@@ -1,0 +1,23 @@
+{
+  "name": "p-server",
+  "author": "renjunqing",
+  "description": "this is a node static server",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "ejs": "~0.8.5",
+    "express": "^4.10.4",
+    "lodash": "^4.13.1",
+    "xml2js": "^0.4.16"
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "keywords": [
+    "node",
+    "servers"
+  ],
+  "license": "ISC"
+}
