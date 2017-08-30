@@ -1,2 +1,2 @@
 REM
-node.exe app.js
+node.exe app.js -config servers-config

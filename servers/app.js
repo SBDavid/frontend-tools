@@ -1,4 +1,11 @@
-var servers = require('./servers-config.js');
+var loadDir = require('./load_dir');
+
+var configFile = 'servers-config';
+if (process.argv.indexOf('-config') > -1) {
+	configFile = process.argv[process.argv.indexOf('-config') + 1];
+}
+
+var servers = loadDir('./')[configFile];
 var path = require('path');
 var fs = require('fs');
 var colors = require('colors');
