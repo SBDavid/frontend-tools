@@ -69,7 +69,7 @@ var creatContent = function(fileList) {
 module.exports = [
 	{
 		state: 'on',
-		serverName: ['a.com', 'b.com', 'c.com'],
+		serverName: ['a.com', 'b.com', 'c.com', 'vip.pptv.com'],
 		root: 'D:\/git-learn',
 		rewrite: {
 			// 'music2017': 'special-subject/music2017'

@@ -65,6 +65,6 @@ app.use('*', function(req, res) {
 		res.status(404).send('没有配置该域名或该主机未启动');
 	}
 });
-app.listen(80, '127.0.0.1');
+app.listen(80);
 console.log('p-server 启动成功！');
 module.exports = app;
